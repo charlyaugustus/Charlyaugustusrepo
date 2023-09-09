@@ -5,6 +5,9 @@ class Curso(models.Model):
 
     nombre = models.CharField(max_length=40)
     camada = models.IntegerField()
+    
+    def __str__(self) -> str:
+        return f'{self.nombre} - {self.camada}'
 
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=40)
@@ -21,3 +24,4 @@ class Entregables(models.Model):
     nombre = models.CharField(max_length=40)
     fecha_entrega = models.DateField()
     entregado = models.BooleanField()
+    link = models.CharField(max_length=256, null=True)
